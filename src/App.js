@@ -1,6 +1,6 @@
 import "./App.css";
 import * as React from "react";
-
+import anyapic from "./anya-wordle.png";
 import WordlePage from "./WordlePage";
 import InputPagePlayer1 from "./InputPage";
 
@@ -56,7 +56,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p style={{ fontSize: "50px" }}>✨ Pair Wordle ✨</p>
+        <img src={anyapic} alt="Anya Wordling" height={"240px"} />
+
+        <p style={{ fontSize: "50px", margin: "24px" }}>✨ Pair Wordle ✨</p>
 
         {correctWord.length !== 5 ? (
           <InputPagePlayer1

@@ -117,16 +117,17 @@ const WordlePage = ({ guesses, addGuess, correctWord, onDoneGuessing }) => {
         ))}
       </div>
       {doneGuessing && (
-        <div className="vertical">
+        <div className="vertical" style={{ alignItems: "center" }}>
           <div>
             {lastGuess === correctWord
-              ? "Nice"
+              ? "✨ Nice ✨"
               : `Word: ${correctWord.toUpperCase()}`}
           </div>
           <button
             onClick={() => {
               onDoneGuessing();
             }}
+            style={{ height: "40px", width: "150px", backgroundColor: "pink" }}
           >
             Back to input
           </button>

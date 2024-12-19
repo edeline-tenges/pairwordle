@@ -32,8 +32,8 @@ const InputPagePlayer1 = ({ onSubmitPlayer1Words }) => {
   };
 
   return (
-    <div>
-      <title> Player 1 - Enter a word for Player 2 to guess </title>
+    <div className="vertical">
+      <div> Enter a 5 letter word for your friend to guess! </div>
 
       <form onSubmit={handleSubmit}>
         <div
