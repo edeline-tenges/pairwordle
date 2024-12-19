@@ -36,23 +36,51 @@ const InputPagePlayer1 = ({ onSubmitPlayer1Words }) => {
       <title> Player 1 - Enter a word for Player 2 to guess </title>
 
       <form onSubmit={handleSubmit}>
-        <label for="fname">Word:</label>
-        <input
-          type="text"
-          id="firstWord"
-          name="firstWord"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Enter a 5 letter word"
-          required
-        />
-        {showError && (
-          <span style={{ color: "red" }}>
-            Your word should have exactly 5 letters
-          </span>
-        )}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+            gap: "40px",
+          }}
+        >
+          <div>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "20px",
+              }}
+            >
+              <label for="firstWord">Word:</label>
+              <input
+                type="text"
+                id="firstWord"
+                name="firstWord"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Enter a 5 letter word"
+                required
+                style={{ height: "40px", fontSize: "20px" }}
+              />
+            </div>
 
-        <button type="submit">Next</button>
+            {showError && (
+              <span style={{ color: "red", fontSize: "12px" }}>
+                Your word should have exactly 5 letters
+              </span>
+            )}
+          </div>
+
+          <button
+            type="submit"
+            style={{ height: "40px", width: "150px", backgroundColor: "pink" }}
+          >
+            Next
+          </button>
+        </div>
       </form>
     </div>
   );

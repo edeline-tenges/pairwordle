@@ -57,7 +57,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>✨ Pair Wordle ✨</p>
+        <p style={{ fontSize: "50px" }}>✨ Pair Wordle ✨</p>
 
         {correctWord.length !== 5 ? (
           <InputPagePlayer1

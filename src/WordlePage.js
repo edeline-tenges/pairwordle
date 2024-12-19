@@ -34,6 +34,9 @@ function removeLetterAt(word, index) {
 
 const getLetterColour = ({ word, correctWord, index }) => {
   const letter = word[index];
+  console.log("print index", index);
+  console.log("print letter", letter);
+
   if (letter === correctWord[index]) {
     return "#4dd141"; // green
   }
@@ -46,8 +49,10 @@ const getLetterColour = ({ word, correctWord, index }) => {
     removeLetterAt(correctWord, index),
     letter
   );
+  console.log("print numberInWord", numberInWord);
+  console.log("print numberInCorrectWord", numberInCorrectWord);
 
-  if (numberInCorrectWord < numberInWord) {
+  if (numberInCorrectWord < numberInWord + 1) {
     return "b0b0b0"; // grey
   }
   return "#ffe045"; // yellow
@@ -88,6 +93,7 @@ const WordlePage = ({ guesses, addGuess, correctWord, onDoneGuessing }) => {
             const { value } = e.target;
             setDraftGuess(value);
           }}
+          style={{ fontSize: "16px" }}
         />
         <button
           type="submit"
@@ -96,10 +102,12 @@ const WordlePage = ({ guesses, addGuess, correctWord, onDoneGuessing }) => {
             addGuess(draftGuess);
             setDraftGuess(""); // reset the input box
           }}
+          style={{ height: "40px", width: "100px", backgroundColor: "pink" }}
         >
           Submit
         </button>
       </div>
+
       <div className="wordle-container">
         {guesses.map((guess) => (
           <WordleRow word={guess} correctWord={correctWord} />
