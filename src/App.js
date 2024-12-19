@@ -39,8 +39,19 @@ function App() {
   const [correctWord, setCorrectWord] = React.useState("");
   const [guesses, setGuesses] = React.useState([]);
 
+  const [doneGuessing, setDoneGuessing] = React.useState(false);
+
   const onConfirmCorrectWord = (word) => {
     setCorrectWord(word);
+  };
+
+  const addGuess = (word) => {
+    console.log("guess", word);
+    setGuesses([...guesses, word]);
+  };
+
+  const onDoneGuessing = () => {
+    setDoneGuessing(true);
   };
 
   return (
@@ -53,11 +64,13 @@ function App() {
             onSubmitPlayer1Words={setCorrectWord}
           ></InputPagePlayer1>
         ) : (
-          <WordlePage guesses={guesses} />
+          <WordlePage
+            guesses={guesses}
+            addGuess={addGuess}
+            correctWord={correctWord}
+            onDoneGuessing={onDoneGuessing}
+          />
         )}
-
-        {/* putting wordle page here for testing */}
-        <WordlePage guesses={guesses} />
       </header>
     </div>
   );
