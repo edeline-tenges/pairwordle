@@ -77,10 +77,10 @@ const WordlePage = ({ guesses, addGuess, correctWord, onDoneGuessing }) => {
 
   const hasHitMaxGuesses = numOfEmptyRows === 0;
 
-  //   const lastGuess = guesses.pop();
-  //   const doneGuessing = lastGuess
-  //     ? lastGuess === correctWord || hasHitMaxGuesses
-  //     : false;
+  const lastGuess = guesses[guesses.length - 1];
+  const doneGuessing = lastGuess
+    ? lastGuess === correctWord || hasHitMaxGuesses
+    : false;
 
   return (
     <div className="vertical">
@@ -116,15 +116,22 @@ const WordlePage = ({ guesses, addGuess, correctWord, onDoneGuessing }) => {
           <EmptyRow />
         ))}
       </div>
-      {/* {doneGuessing && (
-        <button
-          onClick={() => {
-            onDoneGuessing();
-          }}
-        >
-          Back to input
-        </button>
-      )} */}
+      {doneGuessing && (
+        <div className="vertical">
+          <div>
+            {lastGuess === correctWord
+              ? "Nice"
+              : `Word: ${correctWord.toUpperCase()}`}
+          </div>
+          <button
+            onClick={() => {
+              onDoneGuessing();
+            }}
+          >
+            Back to input
+          </button>
+        </div>
+      )}
     </div>
   );
 };

@@ -39,8 +39,6 @@ function App() {
   const [correctWord, setCorrectWord] = React.useState("");
   const [guesses, setGuesses] = React.useState([]);
 
-  const [doneGuessing, setDoneGuessing] = React.useState(false);
-
   const onConfirmCorrectWord = (word) => {
     setCorrectWord(word);
   };
@@ -51,7 +49,8 @@ function App() {
   };
 
   const onDoneGuessing = () => {
-    setDoneGuessing(true);
+    setCorrectWord(""); //reset the word
+    setGuesses([]); //reset the guesses
   };
 
   return (
