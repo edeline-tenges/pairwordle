@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/pairwordle/static/css/main.2fea986a.css",
+    "main.js": "/pairwordle/static/js/main.5a68dfb0.js",
+    "static/js/488.d8744879.chunk.js": "/pairwordle/static/js/488.d8744879.chunk.js",
+    "static/media/anya-wordle.png": "/pairwordle/static/media/anya-wordle.4f634f2110a1fa146ffc.png",
+    "index.html": "/pairwordle/index.html",
+    "main.2fea986a.css.map": "/pairwordle/static/css/main.2fea986a.css.map",
+    "main.5a68dfb0.js.map": "/pairwordle/static/js/main.5a68dfb0.js.map",
+    "488.d8744879.chunk.js.map": "/pairwordle/static/js/488.d8744879.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2fea986a.css",
+    "static/js/main.5a68dfb0.js"
+  ]
+}
